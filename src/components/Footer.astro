@@ -1,0 +1,31 @@
+---
+import YouTubeLogo from "./YouTubeLogo.astro";
+import InstagramLogo from "./InstagramLogo.astro";
+
+const year = new Date().getFullYear();
+
+const email = "survivorgrandrapids@gmail.com";
+const youtubeLink = "https://www.youtube.com/channel/UCGAwYvxsgyLLOhOJZk8qqDA";
+const instagramLink = "https://www.instagram.com/survivorgrandrapids/";
+const copyright = `©${year} survivordearbornproductions`;
+---
+
+<footer class="bg-white text-black p-8">
+    <div class="w-full border-t border-gray-300 mb-4"></div>
+    <div class="container mx-auto text-center">
+        <div class="mb-2">
+            <a href={`mailto:${email}`} class="text-lg">{email}</a>
+        </div>
+        <div class="mb-2 flex justify-center space-x-4">
+            <a href={youtubeLink} target="_blank" rel="noopener noreferrer" class="h-6 w-6">
+                <YouTubeLogo />
+            </a>
+            <a href={instagramLink} target="_blank" rel="noopener noreferrer" class="h-6 w-6">
+                <InstagramLogo />
+            </a>
+        </div>
+        <div>
+            <p>{copyright}</p>
+        </div>
+    </div>
+</footer>

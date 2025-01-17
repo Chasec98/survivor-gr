@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import ImageGallery from '../components/ImageGallery.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+	<section class="bg-white">
+		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
+			<img src="/public/IMG_5804_HEIC.avif">
+			<h2 class="text-[56px] text-center leading-tight text-[#e3be05] txt-shadow">Welcome to our tribe</h2>
+			<p class="text-center font-survivor">The legendary reality television sensation has come to Michigan. For Six seasons, castaways from around the United States have traveled to the tropical backyard and competed in the greatest game this side of the Great Lakes. Check out the legacy on YouTube now!</p>
+		</div>
+	</section>
+	<section class="bg-[#e8e6e6]">
+		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
+			<h2 class="text-[56px] text-center leading-tight font-chelsea">Series Overview</h2>
+			<div class="flex sm:flex-row flex-col sm:gap-12 gap-6 flex-wrap justify-center">
+				<a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-white text-white hover:text-[#e3be05] font-survivor text-[14px]" href="">Survivor: Dearborn</a>
+				<a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-white text-white hover:text-[#e3be05] font-survivor text-[14px]" href="">Survivor: Grand Rapids</a>
+			</div>
+		</div>
+	</section>
+	<ImageGallery />
 </Layout>

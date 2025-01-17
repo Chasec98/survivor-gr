@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Chelsea Market";
+    src: url("/fonts/ChelseaMarket-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Survivor";
+    src: url("/fonts/Survivor-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Fredericka";
+    src: url("/fonts/FrederickatheGreat-Regular.ttf");
+}
+
+h2 {
+    @apply font-survivor;
+}
+
+.txt-shadow {
+    text-shadow: rgba(255, 255, 255, 0.6) 1px 1px 1px, rgba(0, 0, 0, 0.6) -1px -1px 1px;
+}
