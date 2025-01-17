@@ -1,11 +1,13 @@
 ---
 import ImageText from '../components/ImageText.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import bg1 from '../assets/images/bg-1.webp';
+import bg2 from '../assets/images/bg-2.webp';
+import SurvivorMiamiII from '../assets/images/SurvivorMiamiII.avif';
+import SurvivorGrandRapids from '../assets/images/SurvivorGrand Rapids.avif';
+import SurvivorGrandRapids11 from '../assets/images/SurvivorGrandRapids11.avif';
+import SurvivorCincinnati from '../assets/images/survivor cincinnati.avif';
 ---
-
 <Layout title="Day Longs">
 	<section class="bg-white">
 		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
@@ -20,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
     <ImageText
         title="Survivor: Miami"
         subtitle="The Lost Season"
-        bgImage="/survivor-gr/images/bg-1.webp"
+        bgImage={bg1}
     >
         <div class="pt-4 flex flex-col gap-4">
             <p class="font-chelsea text-[#e3be05]">The first season of our Drinking Version is unfortunately lost. However, its legacy remains.</p>
@@ -32,8 +34,8 @@ import Layout from '../layouts/Layout.astro';
     <ImageText
         title="Survivor: Miami II"
         subtitle="The Alcoholic Outback"
-        bgImage="/survivor-gr/images/bg-2.webp"
-        image="/survivor-gr/images/SurvivorMiamiII.avif"
+        bgImage={bg2}
+        image={SurvivorMiamiII}
         reverse
     >
         <div class="pt-4 flex flex-col gap-4">
@@ -45,8 +47,8 @@ import Layout from '../layouts/Layout.astro';
     <ImageText
         title="Survivor: Grand Rapids"
         subtitle="Edge of Intoxication"
-        bgImage="/survivor-gr/images/bg-1.webp"
-        image="/survivor-gr/images/SurvivorGrand Rapids.avif"
+        bgImage={bg1}
+        image={SurvivorGrandRapids}
     >
         <div class="pt-4 flex flex-col gap-4">
             <p class="font-chelsea text-[#e3be05]">For the first time, the game of Survivor came to the West Side of the state. For the first time since Heroes vs Villains, a brand new batch of castaways took on the game. Players learned how to adapt to the quick paced game while balancing their game.</p>
@@ -57,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
     <ImageText
         title="Survivor: Grand Rapids"
         subtitle="Jägerbombed"
-        bgImage="/survivor-gr/images/bg-2.webp"
-        image="/survivor-gr/images/SurvivorGrandRapids11.avif"  
+        bgImage={bg2}
+        image={SurvivorGrandRapids11}
         reverse
     >
         <div class="pt-4 flex flex-col gap-4">
@@ -70,8 +72,8 @@ import Layout from '../layouts/Layout.astro';
     <ImageText
         title="Survivor: Cincinnati"
         subtitle="Medicinal Warfare"
-        bgImage="/survivor-gr/images/bg-1.webp"
-        image="/survivor-gr/images/survivor cincinnati.avif"  
+        bgImage={bg1}
+        image={SurvivorCincinnati}
     >
         <div class="pt-4 flex flex-col gap-4">
             <p class="font-chelsea text-[#e3be05]">The game returned to the state down south - this time mixing a group of med students against some seasoned veterans.</p>

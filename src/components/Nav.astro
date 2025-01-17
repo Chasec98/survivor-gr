@@ -1,4 +1,7 @@
 ---
+import { Image as AstroImage } from 'astro:assets';
+import season6Logo from '../assets/images/Season6Real.avif';
+
 const currentRoute = Astro.url.pathname;
 
 function textColor(route: string) {
@@ -8,7 +11,7 @@ function textColor(route: string) {
 <div class="flex flex-col items-center">
     <!-- Logo Section -->
     <div class="py-2">
-        <img src="/survivor-gr/images/Season6Real.avif" alt="Logo" class="h-16" />
+        <AstroImage src={season6Logo} alt="Logo" class="h-16" />
     </div>
     
     <!-- Navigation Bar -->

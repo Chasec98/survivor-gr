@@ -1,10 +1,44 @@
 ---
+import { Image as AstroImage } from 'astro:assets';
+import season6Logo from '../assets/images/Season6Real.avif';
 ---
 <div class="flex flex-col items-center">
     <!-- Logo Section -->
-    <div class="py-2">
-        <img src="/survivor-gr/images/Season6Real.avif" alt="Logo" class="h-16" />
+    <div class="py-2 flex justify-between items-center w-full border-b-gray-300 border-solid border">
+        <div class="flex-1 flex justify-center">
+            <AstroImage src={season6Logo} alt="Logo" class="h-16" />
+        </div>
+        <button id="openModal" class="text-black text-2xl pr-4 absolute right-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
     </div>
 
-    <div class="w-full bg-black text-white h-14"></div>
+    <!-- Full Screen Modal -->
+    <div id="mobileNavModal" class="fixed inset-0 bg-white z-50 hidden">
+        <div class="flex flex-col items-center justify-center h-full">
+            <button id="closeModal" class="absolute top-6 pr-4 right-2 text-black text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#" class="text-xl">Home</a>
+                <a href="#" class="text-xl">About</a>
+                <a href="#" class="text-xl">Services</a>
+                <a href="#" class="text-xl">Contact</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    document.getElementById('openModal')?.addEventListener('click', function() {
+        document.getElementById('mobileNavModal')?.classList.remove('hidden');
+    });
+
+    document.getElementById('closeModal')?.addEventListener('click', function() {
+        document.getElementById('mobileNavModal')?.classList.add('hidden');
+    });
+</script>
