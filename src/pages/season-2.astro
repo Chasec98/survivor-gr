@@ -1,17 +1,22 @@
 ---
-import Image from '../components/Image.astro';
+import Image from '../sections/Image.astro';
 import Layout from '../layouts/Layout.astro';
 import season2Group from '../assets/images/season-2-group.avif';
+import PageHeader from '../sections/PageHeader.astro';
+
+const title = 'Season 2';
+const subtitle = 'The Blood vs Water';
+const button = {
+	text: 'Check out Season 2',
+	url: 'https://youtu.be/tBC0nxbiu5o'
+};
 ---
 
-<Layout title="Season 2 - Blood vs Water">
-    <section class="bg-white">
-		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
-			<h2 class="text-[56px] text-center leading-tight text-[#e3be05] txt-shadow">Season 2</h2>
-            <h6 class="text-[20px] text-center leading-tight font-museo">Blood vs Water</h6>
-			<p class="text-center font-fredericka">Season 2 pitted three pairs of siblings together alongside a new batch of players. This season introduced new twists and turns that the castaways had to navigate. This electric season pinpoints the shift in our game with big moves, jaw-dropping tribals, and memorable characters.</p>
-            <a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-white text-white hover:text-[#e3be05] font-survivor text-[14px]" href="https://youtu.be/tBC0nxbiu5o">Check out Season 2</a>
-		</div>
-	</section>
+<Layout title={`${title} - ${subtitle}`}>
+	<PageHeader title={title} subtitle={subtitle} button={button}>
+		<p class="text-center font-fredericka">
+			Season 2 pitted three pairs of siblings together alongside a new batch of players. This season introduced new twists and turns that the castaways had to navigate. This electric season pinpoints the shift in our game with big moves, jaw-dropping tribals, and memorable characters.
+		</p>
+	</PageHeader>
 	<Image image={season2Group} />
 </Layout>

@@ -1,14 +1,13 @@
 ---
 import { Image as AstroImage } from 'astro:assets';
 import season6Group from '../assets/images/season-6-group.avif';
-import ImageGallery from '../components/ImageGallery.astro';
+import ImageGallery from '../sections/ImageGallery.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
 	<section class="bg-white">
 		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
-			
 			<AstroImage src={season6Group} alt="Season 6 Group" />
 			<h2 class="text-[56px] text-center leading-tight text-[#e3be05] txt-shadow">Welcome to our tribe</h2>
 			<p class="text-center font-survivor">The legendary reality television sensation has come to Michigan. For Six seasons, castaways from around the United States have traveled to the tropical backyard and competed in the greatest game this side of the Great Lakes. Check out the legacy on YouTube now!</p>
