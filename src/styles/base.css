@@ -4,17 +4,17 @@
 
 @font-face {
     font-family: "Chelsea Market";
-    src: url("/fonts/ChelseaMarket-Regular.ttf");
+    src: url("/survivor-gr/fonts/ChelseaMarket-Regular.ttf");
 }
 
 @font-face {
     font-family: "Survivor";
-    src: url("/fonts/Survivor-Regular.woff2") format("woff2");
+    src: url("/survivor-gr/fonts/Survivor-Regular.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Fredericka";
-    src: url("/fonts/FrederickatheGreat-Regular.ttf");
+    src: url("/survivor-gr/fonts/FrederickatheGreat-Regular.ttf");
 }
 
 h2 {
