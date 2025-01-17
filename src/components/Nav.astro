@@ -2,7 +2,7 @@
 const currentRoute = Astro.url.pathname;
 
 function textColor(route: string) {
-    return currentRoute === route ? 'text-gray-400' : 'text-white';
+    return currentRoute === route ? 'text-white' : 'text-[#e3be05]';
 }
 ---
 <div class="flex flex-col items-center">
@@ -13,14 +13,28 @@ function textColor(route: string) {
     
     <!-- Navigation Bar -->
     <div class="w-full bg-black text-white">
-        <div class="container mx-auto flex flex-col items-center py-4">
+        <div class="container mx-auto flex flex-col items-center">
             <!-- Navigation Links -->
-            <ul class="flex space-x-8">
-                <li><a href="/survivor-gr" class={`hover:text-gray-400 font-survivor ${textColor('/')}`}>Home</a></li>
-                <li><a href="/survivor-gr/dearborn" class={`hover:text-gray-400 font-survivor ${textColor('#about')}`}>Dearborn</a></li>
-                <li><a href="/survivor-gr/grand-rapids" class={`hover:text-gray-400 font-survivor ${textColor('#services')}`}>Grand Rapids</a></li>
-                <li><a href="/survivor-gr/day-longs" class={`hover:text-gray-400 font-survivor ${textColor('/day-longs')}`}>Day Longs</a></li>
-                <li><a href="/survivor-gr/fan-favorite-voting" class={`hover:text-gray-400 font-survivor ${textColor('/fan-favorite-voting')}`}>Fan Favorite Voting</a></li>
+            <ul class="flex gap-4 relative">
+                <li class="py-4"><a href="/survivor-gr" class={`hover:text-white font-survivor ${textColor('/survivor-gr/')}`} title="Home">Home</a></li>
+                <li class="group relative py-4">
+                    <a href="/survivor-gr/dearborn" class={`hover:text-white font-survivor ${textColor('/survivor-gr/dearborn')}`} title="Dearborn">Dearborn</a>
+                    <ul class="absolute left-1/2 transform -translate-x-1/2 mt-2 hidden group-hover:block bg-black space-y-2 p-2 w-max">
+                        <li><a href="/survivor-gr/season-1" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-1')}`} title="Season 1">Season 1</a></li>
+                        <li><a href="/survivor-gr/season-2" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-2')}`} title="Season 2">Season 2</a></li>
+                        <li><a href="/survivor-gr/season-3" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-3')}`} title="Season 3">Season 3</a></li>
+                        <li><a href="/survivor-gr/season-4" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-4')}`} title="Season 4">Season 4</a></li>
+                    </ul>
+                </li>
+                <li class="group relative py-4">
+                    <a href="/survivor-gr/grand-rapids" class={`hover:text-white font-survivor ${textColor('/survivor-gr/grand-rapids')}`} title="Grand Rapids">Grand Rapids</a>
+                    <ul class="absolute left-1/2 transform -translate-x-1/2 mt-2 hidden group-hover:block bg-black space-y-2 p-2 w-max">
+                        <li><a href="/survivor-gr/season-5" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-5')}`} title="Season 5">Season 5</a></li>
+                        <li><a href="/survivor-gr/season-6" class={`hover:text-white font-survivor ${textColor('/survivor-gr/season-6')}`} title="Season 6">Season 6</a></li>
+                    </ul>
+                </li>
+                <li class="py-4"><a href="/survivor-gr/day-longs" class={`hover:text-white font-survivor ${textColor('/survivor-gr/day-longs')}`} title="Day Longs">Day Longs</a></li>
+                <li class="py-4"><a href="/survivor-gr/fan-favorite-voting" class={`hover:text-white font-survivor ${textColor('/survivor-gr/fan-favorite-voting')}`} title="Fan Favorite Voting">Fan Favorite Voting</a></li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,9 @@
+---
+const { image } = Astro.props
+---
+<section class="bg-white relative overflow-hidden">
+    <img src="/survivor-gr/images/bg-1.jpeg" class="object-cover absolute inset-0 w-full h-full z-0 blur-sm scale-150">
+    <div class={`relative flex items-center justify-center gap-4 max-w-[1024px] mx-auto px-6 py-12 z-10 text-white`}>
+        <img src={image}>
+    </div>
+</section>

@@ -17,6 +17,11 @@
     src: url("/survivor-gr/fonts/FrederickatheGreat-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Museo";
+    src: url("/survivor-gr/fonts/museo-w01-700.woff2") format("woff2");
+}
+
 h2 {
     @apply font-survivor;
 }

@@ -1,6 +1,16 @@
 ---
+import Image from '../components/Image.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Season 1">
+<Layout title="Season 1 - The Beginning">
+    <section class="bg-white">
+		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
+			<h2 class="text-[56px] text-center leading-tight text-[#e3be05] txt-shadow">Season 1</h2>
+            <h6 class="text-[20px] text-center leading-tight font-museo">The Beginning</h6>
+			<p class="text-center font-fredericka">Season 1 found eighteen castaways taking on the game for the first time in our first season. The game was two days with the premerge playing out on Day 1 and Merge taking on Day 2.</p>
+            <a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-white text-white hover:text-[#e3be05] font-survivor text-[14px]" href="https://www.youtube.com/watch?v=L5e5zOam_bQ&list=PLKdBCkUjpzdRlxJK28MGKum5dUPddAV-g">Check out Season 1</a>
+		</div>
+	</section>
+	<Image image="/survivor-gr/images/season-1-group.avif" />
 </Layout>
