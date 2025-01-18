@@ -4,25 +4,26 @@ import { Image as AstroImage } from 'astro:assets';
 
 import season5Group from '../assets/images/season-5-group.avif';
 import season6Group from '../assets/images/season-6-group.avif';
+import ButtonLink from '../components/ButtonLink.astro';
 ---
 
 <Layout title="Grand Rapids">
     <section class="bg-white">
 		<div class="flex flex-col items-center justify-center gap-4 max-w-[770px] mx-auto p-6">
-			<h2 class="text-[56px] text-center leading-tight text-[#e3be05] txt-shadow">Survivor:<br />Grand Rapids</h2>
+			<h2 class="text-[56px] text-center leading-tight text-primary txt-shadow">Survivor:<br />Grand Rapids</h2>
             <h6 class="text-[20px] text-center leading-tight font-museo">The Next Gen</h6>
 			<p class="text-center font-fredericka">You thought we were finished? After four years since Heroes v Villains, Survivor is back in Michigan - this time on the West Side of the state. A new group of castaways take on the greatest game and carry on the legacy of those that came before them.</p>
 		</div>
 	</section>
 	<section class="bg-white relative overflow-hidden">
 		<div class={`relative flex sm:flex-row flex-col items-center justify-center gap-4 max-w-[1024px] mx-auto p-6 z-10 text-white`}>
-			<div class="flex flex-col basis-3/5 gap-2">
-				<h5 class="font-chelsea text-[#e3be05] text-[25px]">Survivor: Grand Rapids<br />Fresh Meat</h5>
-				<p class="font-fredericka text-black">The fifth installment of the series is the reboot we needed. 18 new castaways take on the role of fresh meat, navigating the game four years in the making. joined by two Survivor: Dearborn alumni, this season is sure to make its mark in the series history.</p>
-				<p class="font-fredericka text-black">Who will come out on top and claim the first ever title of sole survivor in Grand Rapids?</p>
-				<div class="flex flex-row gap-4">
-					<a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-[#c9a504] text-white hover:text-white font-survivor text-[14px]" href="#">Watch to Find Out</a>
-					<a class="bg-white border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-[#c9a504] text-[#e3be05] hover:text-white font-survivor text-[14px]" href="#">Meet the Cast</a>
+			<div class="flex flex-col basis-3/5 gap-2 justify-center sm:justify-start">
+				<h5 class="font-chelsea text-primary text-[25px] sm:text-start text-center">Survivor: Grand Rapids<br />Fresh Meat</h5>
+				<p class="font-fredericka text-black sm:text-start text-center">The fifth installment of the series is the reboot we needed. 18 new castaways take on the role of fresh meat, navigating the game four years in the making. joined by two Survivor: Dearborn alumni, this season is sure to make its mark in the series history.</p>
+				<p class="font-fredericka text-black sm:text-start text-center">Who will come out on top and claim the first ever title of sole survivor in Grand Rapids?</p>
+				<div class="flex flex-row gap-4 pt-2 justify-center sm:justify-start">
+					<ButtonLink href="#" ariaLabel='' label='Watch to Find Out' type="primary" />
+					<ButtonLink href="#" ariaLabel='' label='Meet the Cast' type="secondary" />
 				</div>
 			</div>
 			<div class="basis-2/5 flex">
@@ -32,13 +33,13 @@ import season6Group from '../assets/images/season-6-group.avif';
 	</section>
 	<section class="bg-white relative overflow-hidden">
 		<div class={`relative flex sm:flex-row flex-col items-center justify-center gap-4 max-w-[1024px] mx-auto p-6 z-10 text-white`}>
-			<div class="flex flex-col basis-3/5 gap-2">
-				<h5 class="font-chelsea text-[#e3be05] text-[25px]">Survivor: Grand Rapids<br />Bad Blood</h5>
-				<p class="font-fredericka text-black">Filmed in the summer of 2023, Season 6 brought 20 castaways back to the backyard.</p>
-				<p class="font-fredericka text-black">In a season like never before, who will come out on top and claim the first ever title of sole survivor in Grand Rapids? Find out in 2024!</p>
-				<div class="flex flex-row gap-4">
-					<a class="bg-[#e3be05] border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-white text-white hover:text-[#e3be05] font-survivor text-[14px]" href="#">Watch the Trailer</a>
-					<a class="bg-white border-[#e3be05] py-2 px-4 border hover:border-solid hover:bg-[#e3be05] text-[#e3be05] hover:text-white font-survivor text-[14px]" href="#">Meet the Cast</a>
+			<div class="flex flex-col basis-3/5 gap-2 justify-center sm:justify-start">
+				<h5 class="font-chelsea text-primary text-[25px] sm:text-start text-center">Survivor: Grand Rapids<br />Bad Blood</h5>
+				<p class="font-fredericka text-black sm:text-start text-center">Filmed in the summer of 2023, Season 6 brought 20 castaways back to the backyard.</p>
+				<p class="font-fredericka text-black sm:text-start text-center">In a season like never before, who will come out on top and claim the first ever title of sole survivor in Grand Rapids? Find out in 2024!</p>
+				<div class="flex flex-row gap-4 pt-2 justify-center sm:justify-start">
+					<ButtonLink href="#" ariaLabel='Watch the trailer for Survivor: Grand Rapids - Bad Blood' label='Watch the Trailer' type="primary" />
+					<ButtonLink href="#" ariaLabel='Meet the cast of Survivor: Grand Rapids - Bad Blood' label='Meet the Cast' type="secondary" />
 				</div>
 			</div>
 			<div class="basis-2/5 flex">

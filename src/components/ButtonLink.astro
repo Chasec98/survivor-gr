@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string
+  label: string
+  type: 'primary' | 'secondary'
+  ariaLabel: string
+}
+const { href, label, type, ariaLabel } = Astro.props
+
+const primary = 'bg-primary border-primary py-2 px-4 border border-solid hover:bg-primaryHover text-white font-survivor text-sm text-nowrap'
+const secondary = 'bg-secondary border-secondary py-2 px-4 border border-solid hover:bg-secondaryHover text-white font-survivor text-sm text-nowrap'
+---
+<a
+  aria-label={ariaLabel}
+  class={type === 'primary' ? primary : secondary}
+  href={href}
+>
+  {label}
+</a>

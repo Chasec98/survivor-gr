@@ -11,6 +11,12 @@ export default {
 			},
 			brightness: {
 				35: '.35',
+			},
+			colors: {
+				primary: '#e3be05',
+				secondary: '#3f7652',
+				primaryHover: '#c3a304',
+				secondaryHover: '#355f45'
 			}
 		},
 	},
