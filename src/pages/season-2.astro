@@ -3,13 +3,58 @@ import Image from '../sections/Image.astro';
 import Layout from '../layouts/Layout.astro';
 import season2Group from '../assets/images/season-2/group.avif';
 import PageHeader from '../sections/PageHeader.astro';
+import ProfileGrid from '../sections/ProfileGrid.astro';
+
+import ellayna from '../assets/images/season-2/cast/ellayna-iaquaniello.avif';
+import lily from '../assets/images/season-2/cast/lily-iaquaniello.avif';
+import michael from '../assets/images/season-2/cast/michael-hancock.avif';
+import evan from '../assets/images/season-2/cast/evan-latham.avif';
+import andre from '../assets/images/season-2/cast/andre-senerpida.avif';
+import val from '../assets/images/season-2/cast/val-vena.avif';
+import cam from '../assets/images/season-2/cast/cam-godin.avif';
+import delano from '../assets/images/season-2/cast/delano-dalfonsi.avif';
+import anthony from '../assets/images/season-2/cast/anthony-hancock.avif';
+import emilie from '../assets/images/season-2/cast/emilie-reinhardt.avif';
+import ryan from '../assets/images/season-2/cast/ryan-mangulabnan.avif';
+import charlie from '../assets/images/season-2/cast/charlie-rich.avif';
+import santana from '../assets/images/season-2/cast/santana-davis.avif';
+import jacob from '../assets/images/season-2/cast/jacob-brenner.avif';
+import matt from '../assets/images/season-2/cast/matt-gaynor.avif';
+import haley from '../assets/images/season-2/cast/haley-divis.avif';
+import anna from '../assets/images/season-2/cast/anna-crandall.avif';
+import patrick from '../assets/images/season-2/cast/patrick-byrne.avif';
+import jian from '../assets/images/season-2/cast/jian-carreon.avif';
+import henry from '../assets/images/season-2/cast/henry-rich.avif';
 
 const title = 'Season 2';
-const subtitle = 'The Blood vs Water';
+const subtitle = 'Blood vs Water';
 const button = {
 	text: 'Check out Season 2',
 	url: 'https://youtu.be/tBC0nxbiu5o'
 };
+
+const crew: { name: string; title: string; image: ImageMetadata }[] = [
+	{ name: 'Ellayna Iaquaniello, 20', title: 'Nursing Student', image: ellayna },
+	{ name: 'Lily Iaquaniello, 15', title: 'Librarian', image: lily },
+	{ name: 'Michael Hancock, 15', title: 'Caddy', image: michael },
+	{ name: 'Evan Latham, 18', title: 'Entrepreneur', image: evan },
+	{ name: 'Andre Senerpida, 17', title: 'Student', image: andre },
+	{ name: 'Val Vena, 19', title: 'Naval Academy Student', image: val },
+	{ name: 'Cam Godin, 17', title: 'Lacrosse Player', image: cam },
+	{ name: 'Delano Dalfonsi', title: 'Construction Worker', image: delano },
+	{ name: 'Anthony Hancock, 15', title: 'Caddy', image: anthony },
+	{ name: 'Emilie Reinhardt, 18', title: 'Food Truck Employee', image: emilie },
+	{ name: 'Ryan Mangulabnan, 18', title: 'Volunteer Nurse Assistant', image: ryan },
+	{ name: 'Charlie Rich, 18', title: 'Applebee\'s Waiter', image: charlie },
+	{ name: 'Santana Davis, 19', title: 'Waitress', image: santana },
+	{ name: 'Jacob Brenner, 18', title: 'Ford Intern', image: jacob },
+	{ name: 'Matt Gaynor, 16', title: 'Hot Dog Vendor', image: matt },
+	{ name: 'Haley Divis, 19', title: 'Lifeguard', image: haley },
+	{ name: 'Anna Crandall, 18', title: 'Grocery Store Cashier', image: anna },
+	{ name: 'Patrick Byrne, 17', title: 'Dishwasher', image: patrick },
+	{ name: 'Jian Carreon, 16', title: 'Retired Hollister Employee', image: jian },
+	{ name: 'Henry Rich, 14', title: 'Cat Sitter', image: henry }
+];
 ---
 
 <Layout title={`${title} - ${subtitle}`}>
@@ -19,4 +64,5 @@ const button = {
 		</p>
 	</PageHeader>
 	<Image image={season2Group} />
+	<ProfileGrid crew={crew} />
 </Layout>
