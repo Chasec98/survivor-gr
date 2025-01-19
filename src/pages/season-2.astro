@@ -25,6 +25,7 @@ import anna from '../assets/images/season-2/cast/anna-crandall.avif';
 import patrick from '../assets/images/season-2/cast/patrick-byrne.avif';
 import jian from '../assets/images/season-2/cast/jian-carreon.avif';
 import henry from '../assets/images/season-2/cast/henry-rich.avif';
+import Sponsors from '../sections/Sponsors.astro';
 
 const title = 'Season 2';
 const subtitle = 'Blood vs Water';
@@ -55,6 +56,20 @@ const crew: { name: string; title: string; image: ImageMetadata }[] = [
 	{ name: 'Jian Carreon, 16', title: 'Retired Hollister Employee', image: jian },
 	{ name: 'Henry Rich, 14', title: 'Cat Sitter', image: henry }
 ];
+
+import talo from '../assets/images/season-2/sponsors/talo.avif';
+import solidState from '../assets/images/season-2/sponsors/solid-state.avif';
+import noted from '../assets/images/season-2/sponsors/noted.avif';
+import goan from '../assets/images/season-2/sponsors/goan.avif';
+import mowi from '../assets/images/season-2/sponsors/mowi.avif';
+
+const sponsors: { name: string; image: ImageMetadata }[] = [
+	{ name: 'Talo', image: talo },
+	{ name: 'Solid State', image: solidState },
+	{ name: 'Noted', image: noted },
+	{ name: 'Goan', image: goan },
+	{ name: 'Mowi', image: mowi }
+];
 ---
 
 <Layout title={`${title} - ${subtitle}`}>
@@ -65,4 +80,5 @@ const crew: { name: string; title: string; image: ImageMetadata }[] = [
 	</PageHeader>
 	<Image image={season2Group} />
 	<ProfileGrid crew={crew} />
+	<Sponsors sponsors={sponsors} />
 </Layout>

@@ -11,6 +11,21 @@ const button = {
 	text: 'Check out Season 3',
 	url: 'https://www.youtube.com/watch?v=NDuAV_O6gBA&list=PLKdBCkUjpzdTHsGPNY7IK-QUFkjbOhwqw'
 };
+
+import talo from '../assets/images/season-2/sponsors/talo.avif';
+import solidState from '../assets/images/season-2/sponsors/solid-state.avif';
+import noted from '../assets/images/season-2/sponsors/noted.avif';
+import goan from '../assets/images/season-2/sponsors/goan.avif';
+import mowi from '../assets/images/season-2/sponsors/mowi.avif';
+import Sponsors from '../sections/Sponsors.astro';
+
+const sponsors: { name: string; image: ImageMetadata }[] = [
+	{ name: 'Talo', image: talo },
+	{ name: 'Solid State', image: solidState },
+	{ name: 'Noted', image: noted },
+	{ name: 'Goan', image: goan },
+	{ name: 'Mowi', image: mowi }
+];
 ---
 <Layout title={`${title} - ${subtitle}`}>
 	<PageHeader title={title} subtitle={subtitle} button={button}>
@@ -19,4 +34,5 @@ const button = {
 		</p>
 	</PageHeader>
 	<Image image={season3Group} />
+	<Sponsors sponsors={sponsors} />
 </Layout>
