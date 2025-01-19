@@ -78,16 +78,25 @@ function textColor(route: string) {
 </div>
 
 <script>
+    // Open modal when open button is clicked
     document.getElementById('openModal')?.addEventListener('click', function() {
         document.getElementById('mobileNavModal')?.classList.remove('hidden');
     });
 
+    // Close modal when close button is clicked
     document.getElementById('closeModal')?.addEventListener('click', function() {
         document.getElementById('mobileNavModal')?.classList.add('hidden');
     });
 
+    // Close modal when any anchor tag is clicked
+    document.querySelectorAll('#mobileNavModal a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobileNavModal')?.classList.add('hidden');
+        });
+    });
+
     // Handle submenu toggles
-    document.querySelectorAll('.expand-btn').forEach((button: Element) => {
+    document.querySelectorAll('.expand-btn').forEach((button) => {
         button.addEventListener('click', function(this: HTMLButtonElement) {
             const targetId = this.getAttribute('data-target');
             if (!targetId) return;
