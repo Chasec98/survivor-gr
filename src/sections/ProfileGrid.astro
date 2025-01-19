@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  crew: { name: string; title: string; image: ImageMetadata }[];
+}
+
+const { crew } = Astro.props;
+---
+<section>
+  <div class="flex flex-col items-center justify-center gap-4 max-w-screen-lg mx-auto p-6">
+    <h2 class="text-[56px] text-center leading-tight font-chelsea">Meet the Crew</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {crew.map((member) => (
+        <div class="flex flex-col items-center justify-center">
+          <Image class="pb-2" src={member.image} alt="" />
+          <p class="text-center font-fredericka">{member.name}</p>
+          <p class="text-center">{member.title}</p>
+        </div>
+      ))}
+  </div>
+</section>

@@ -1,6 +1,12 @@
 ---
 import { Image as AstroImage } from 'astro:assets';
-import season6Logo from '../assets/images/Season6Real.avif';
+import season6Logo from '../assets/images/season-6/logo.avif';
+
+const currentRoute = Astro.url.pathname;
+
+function textColor(route: string) {
+    return currentRoute === route ? 'text-black' : 'text-gray-700';
+}
 ---
 <div class="flex flex-col items-center">
     <!-- Logo Section -->
@@ -10,24 +16,62 @@ import season6Logo from '../assets/images/Season6Real.avif';
         </div>
         <button id="openModal" class="text-black text-2xl pr-4 absolute right-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
     </div>
 
     <!-- Full Screen Modal -->
     <div id="mobileNavModal" class="fixed inset-0 bg-white z-50 hidden">
-        <div class="flex flex-col items-center justify-center h-full">
+        <div class="flex flex-col items-center justify-start h-full pt-20">
             <button id="closeModal" class="absolute top-6 pr-4 right-2 text-black text-2xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div class="flex flex-col items-center space-y-4">
-                <a href="#" class="text-xl">Home</a>
-                <a href="#" class="text-xl">About</a>
-                <a href="#" class="text-xl">Services</a>
-                <a href="#" class="text-xl">Contact</a>
+            <div class="flex flex-col items-center space-y-6 w-full px-8">
+                <div class="w-full">
+                    <a href="/survivor-gr" class={`text-xl font-survivor ${textColor('/survivor-gr/')}`}>Home</a>
+                </div>
+                
+                <div class="w-full">
+                    <div class="flex items-center justify-between w-full">
+                        <a href="/survivor-gr/dearborn" class={`text-xl font-survivor ${textColor('/survivor-gr/dearborn')}`}>Dearborn</a>
+                        <button class="expand-btn p-2" data-target="dearbornSubmenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 transform transition-transform">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="dearbornSubmenu" class="hidden pl-4 mt-4 space-y-4">
+                        <a href="/survivor-gr/season-1" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-1')}`}>Season 1</a>
+                        <a href="/survivor-gr/season-2" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-2')}`}>Season 2</a>
+                        <a href="/survivor-gr/season-3" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-3')}`}>Season 3</a>
+                        <a href="/survivor-gr/season-4" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-4')}`}>Season 4</a>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <div class="flex items-center justify-between w-full">
+                        <a href="/survivor-gr/grand-rapids" class={`text-xl font-survivor ${textColor('/survivor-gr/grand-rapids')}`}>Grand Rapids</a>
+                        <button class="expand-btn p-2" data-target="grandRapidsSubmenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 transform transition-transform">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="grandRapidsSubmenu" class="hidden pl-4 mt-4 space-y-4">
+                        <a href="/survivor-gr/season-5" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-5')}`}>Season 5</a>
+                        <a href="/survivor-gr/season-6" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-6')}`}>Season 6</a>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <a href="/survivor-gr/day-longs" class={`text-xl font-survivor ${textColor('/survivor-gr/day-longs')}`}>Day Longs</a>
+                </div>
+                <div class="w-full">
+                    <a href="/survivor-gr/fan-favorite-voting" class={`text-xl font-survivor ${textColor('/survivor-gr/fan-favorite-voting')}`}>Fan Favorite Voting</a>
+                </div>
             </div>
         </div>
     </div>
@@ -40,5 +84,26 @@ import season6Logo from '../assets/images/Season6Real.avif';
 
     document.getElementById('closeModal')?.addEventListener('click', function() {
         document.getElementById('mobileNavModal')?.classList.add('hidden');
+    });
+
+    // Handle submenu toggles
+    document.querySelectorAll('.expand-btn').forEach((button: Element) => {
+        button.addEventListener('click', function(this: HTMLButtonElement) {
+            const targetId = this.getAttribute('data-target');
+            if (!targetId) return;
+            
+            const submenu = document.getElementById(targetId);
+            const arrow = this.querySelector('svg');
+            
+            if (submenu && arrow) {
+                submenu.classList.toggle('hidden');
+                // Rotate arrow when expanded
+                if (submenu.classList.contains('hidden')) {
+                    arrow.classList.remove('rotate-180');
+                } else {
+                    arrow.classList.add('rotate-180');
+                }
+            }
+        });
     });
 </script>

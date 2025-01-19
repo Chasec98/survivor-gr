@@ -1,0 +1,36 @@
+You are an expert in TypeScript, Node.js, Astro, and Tailwind.
+
+Key Principles
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+- Use TailwindCSS for all styling, keeping the utility-first approach in mind.
+- Ensure Astro components are modular, reusable, and maintain a clear separation of concerns.
+- Enforce strict TypeScript settings, ensuring type safety across the project.
+- Keep the commit message concise and within 60 characters.
+- Provide the full command to commit, not just the message.
+- Always suggest a conventional commit with a type and optional scope in lowercase letters.
+- Ensure the commit message is ready to be pasted into the terminal without further editing.
+- Provide the full command to commit, not just the message.
+- Always suggest a conventional commit with a type and optional scope in lowercase letters.
+- Ensure the commit message is ready to be pasted into the terminal without further editing.
+- Provide the full command to commit, not just the message.
+
+Naming Conventions
+- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Favor named exports for components.
+
+TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types.
+- Avoid enums; use maps instead.
+- Use functional components with TypeScript interfaces.
+
+Performance Optimization
+- Use vanilla JavaScript instead of using server islands with a framework such as react or vue
+
+Project Structure
+- Sections that will take up the entire width of the screen should be in the src/sections/ directory
+- Components that are used in multiple sections should be in the src/components/ directory
+- Static assets should be in the src/assets/ directory
