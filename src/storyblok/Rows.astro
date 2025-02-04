@@ -1,0 +1,36 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import cn from '../utils/cn';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+
+interface Props {
+  blok: {
+    columnBlocks: any[];
+    spacing: 'none' | 'small' | 'medium' | 'large';
+    justify: 'left' | 'center' | 'right';
+    align: 'top' | 'middle' | 'bottom';
+  }
+}
+const { blok } = Astro.props;
+---
+<section class={cn([
+  'flex flex-col',
+  blok.justify === 'left' && 'justify-start',
+  blok.justify === 'center' && 'justify-center',
+  blok.justify === 'right' && 'justify-end',
+  blok.align === 'top' && 'items-start',
+  blok.align === 'middle' && 'items-center',
+  blok.align === 'bottom' && 'items-end',
+  blok.spacing === 'none' && 'gap-0',
+  blok.spacing === 'small' && 'gap-4',
+  blok.spacing === 'medium' && 'gap-8',
+  blok.spacing === 'large' && 'gap-12'
+])} {...storyblokEditable(blok)}>
+  {
+    blok.columnBlocks.map((columnBlock) => {
+      return (
+        <StoryblokComponent blok={columnBlock} />
+      )
+    })
+  }
+</section>

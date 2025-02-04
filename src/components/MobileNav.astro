@@ -1,6 +1,13 @@
 ---
 import { Image as AstroImage } from 'astro:assets';
 import season6Logo from '../assets/images/season-6/logo.avif';
+import cn from '../utils/cn';
+
+interface Props {
+    navigation: { label: string, link: string, items: { label: string, link: string }[] }[];
+}
+
+const { navigation } = Astro.props;
 
 const currentRoute = Astro.url.pathname;
 
@@ -30,48 +37,25 @@ function textColor(route: string) {
                 </svg>
             </button>
             <div class="flex flex-col items-center space-y-6 w-full px-8">
-                <div class="w-full">
-                    <a href="/survivor-gr" class={`text-xl font-survivor ${textColor('/survivor-gr/')}`}>Home</a>
-                </div>
-                
-                <div class="w-full">
-                    <div class="flex items-center justify-between w-full">
-                        <a href="/survivor-gr/dearborn" class={`text-xl font-survivor ${textColor('/survivor-gr/dearborn')}`}>Dearborn</a>
-                        <button class="expand-btn p-2" data-target="dearbornSubmenu">
+                {navigation.map((item) => (
+                    <div class="w-full">
+                        <div class="flex items-center justify-between w-full">
+                        <a href={`/survivor-gr${item.link}`} class={`text-xl font-survivor ${textColor(`/survivor-gr${item.link}`)}`}>{item.label}</a>
+                        <button class={cn("expand-btn p-2", { "invisible": !item.items?.length })} data-target={`${item.label.replace(' ', '')}Submenu`}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 transform transition-transform">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                     </div>
-                    <div id="dearbornSubmenu" class="hidden pl-4 mt-4 space-y-4">
-                        <a href="/survivor-gr/season-1" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-1')}`}>Season 1</a>
-                        <a href="/survivor-gr/season-2" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-2')}`}>Season 2</a>
-                        <a href="/survivor-gr/season-3" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-3')}`}>Season 3</a>
-                        <a href="/survivor-gr/season-4" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-4')}`}>Season 4</a>
+                    {!!item.items?.length && (
+                        <div id={`${item.label.replace(' ', '')}Submenu`} class="hidden pl-4 mt-4 space-y-4">
+                            {item.items.map((subItem) => (
+                                <a href={`/survivor-gr${subItem.link}`} class={`block text-lg font-survivor ${textColor(`/survivor-gr${subItem.link}`)}`}>{subItem.label}</a>
+                            ))}
+                        </div>
+                    )}  
                     </div>
-                </div>
-
-                <div class="w-full">
-                    <div class="flex items-center justify-between w-full">
-                        <a href="/survivor-gr/grand-rapids" class={`text-xl font-survivor ${textColor('/survivor-gr/grand-rapids')}`}>Grand Rapids</a>
-                        <button class="expand-btn p-2" data-target="grandRapidsSubmenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 transform transition-transform">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div id="grandRapidsSubmenu" class="hidden pl-4 mt-4 space-y-4">
-                        <a href="/survivor-gr/season-5" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-5')}`}>Season 5</a>
-                        <a href="/survivor-gr/season-6" class={`block text-lg font-survivor ${textColor('/survivor-gr/season-6')}`}>Season 6</a>
-                    </div>
-                </div>
-
-                <div class="w-full">
-                    <a href="/survivor-gr/day-longs" class={`text-xl font-survivor ${textColor('/survivor-gr/day-longs')}`}>Day Longs</a>
-                </div>
-                <div class="w-full">
-                    <a href="/survivor-gr/fan-favorite-voting" class={`text-xl font-survivor ${textColor('/survivor-gr/fan-favorite-voting')}`}>Fan Favorite Voting</a>
-                </div>
+                ))}
             </div>
         </div>
     </div>

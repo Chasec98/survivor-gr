@@ -1,10 +1,14 @@
 ---
 import Nav from "./Nav.astro"
 import MobileNav from "./MobileNav.astro"
+
+import getNavigation from "../storyblok/api/getNavigation";
+const navigation = await getNavigation();
+
 ---
 <nav class="hidden md:block">
-    <Nav />
+    <Nav navigation={navigation} />
 </nav>
 <nav class="md:hidden" transition:persist>
-    <MobileNav />
+    <MobileNav navigation={navigation} />
 </nav>
