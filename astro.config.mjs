@@ -30,8 +30,9 @@ export default defineConfig({
         page: 'storyblok/Page',
         homePageHero: 'storyblok/HomePageHero',
         richText: 'storyblok/RichText',
-        columns: 'storyblok/Columns',
-        rows: 'storyblok/Rows',
+        columns: 'storyblok/components/structure/Columns',
+        rows: 'storyblok/components/structure/Rows',
+        section: 'storyblok/components/structure/Section',
       },
       apiOptions: {
         // Choose your Storyblok space region

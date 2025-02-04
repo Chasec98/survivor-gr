@@ -1,0 +1,29 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+interface Props {
+  blok: {
+    backgroundImage?: {
+      filename: string;
+      alt: string;
+    } | null;
+    blocks?: any[] | null;
+  };
+}
+
+const { blok } = Astro.props as Props;
+---
+<section class="bg-white relative overflow-hidden" {...storyblokEditable(blok)}>
+    {blok.backgroundImage && <img src={blok.backgroundImage.filename} alt={blok.backgroundImage.alt} class="object-cover absolute inset-0 w-full h-full z-0 blur-sm scale-150" />}
+    <div class={`relative flex items-center justify-center gap-4 max-w-screen-md mx-auto px-6 py-12 z-10 text-white`}>
+      {
+        blok.blocks?.map((block) => {
+          return (
+            <div class="flex-1">
+              <StoryblokComponent blok={block} />
+            </div>
+          )
+        })
+      }
+    </div>
+</section>
